@@ -1,6 +1,6 @@
 testnames = [
     "core", "keywordargs", "numbers", "strings",
-    "collections", "hashing", "remote", "iobuffer", "arrayops", "linalg",
+    "collections", "hashing", "iobuffer", "arrayops", "linalg",
     "blas", "fft", "dsp", "sparse", "bitarray", "random", "math",
     "functional", "bigint", "sorting", "statistics", "spawn", "parallel",
     "priorityqueue", "arpack", "file", "suitesparse", "version",

@@ -20,7 +20,7 @@ areal = randn(n,n)/2
 aimg  = randn(n,n)/2
 breal = randn(n,2)/2
 bimg  = randn(n,2)/2
-for eltya in (Float16, Float32, Float64, Complex32, Complex64, Complex128, BigFloat, Int)
+@parallel (+) for eltya in (Float16, Float32, Float64, Complex32, Complex64, Complex128, BigFloat, Int)
     for eltyb in (Float16, Float32, Float64, Complex32, Complex64, Complex128, Int)
         a = eltya == Int ? rand(1:5, n, n) : convert(Matrix{eltya}, eltya <: Complex ? complex(areal, aimg) : areal)
         b = eltyb == Int ? rand(1:5, n, 2) : convert(Matrix{eltyb}, eltyb <: Complex ? complex(breal, bimg) : breal)
@@ -250,6 +250,7 @@ debug && println("Matrix square root")
         @test_approx_eq asymsq*asymsq asym
     end
 end
+0
 end
 
 ## Least squares solutions
